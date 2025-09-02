@@ -10,9 +10,14 @@ const navItems = [
   { id: "contact", label: "Contact" },
 ];
 
-const Navbar = ({ activeSection, isMenuOpen, scrollToSection }) => {
+const Navbar = ({
+  activeSection,
+  isMenuOpen,
+  scrollToSection,
+  setIsMenuOpen,
+}) => {
   return (
-    <nav className="fixed top-0 w-full bg-black/70 shadow-lg z-50 h-20 text-white">
+    <nav className="fixed top-0 w-full bg-black/70 shadow-lg z-50 h-20 text-white p-2">
       <div className="max-w-full mx-auto text-white sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -56,7 +61,7 @@ const Navbar = ({ activeSection, isMenuOpen, scrollToSection }) => {
               {isMenuOpen ? (
                 <X className="w-6 h-6" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className="w-6 h-6 text-white" />
               )}
             </button>
           </div>
@@ -65,15 +70,15 @@ const Navbar = ({ activeSection, isMenuOpen, scrollToSection }) => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t">
+        <div className="md:hidden bg-black/50 border-t">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 ${
+                className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 text-white ${
                   activeSection === item.id
-                    ? "text-blue-600 bg-blue-50"
+                    ? "text-blue-600 bg-black"
                     : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
                 }`}
               >

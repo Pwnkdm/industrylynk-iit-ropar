@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import IndustryLynkWebsite from "./IndustryLynkWebsite ";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,11 +30,13 @@ const App = () => {
         scrollToSection={scrollToSection}
         isMenuOpen={isMenuOpen}
         activeSection={activeSection}
+        setIsMenuOpen={setIsMenuOpen}
       />
       <IndustryLynkWebsite
         scrollToSection={scrollToSection}
         setActiveSection={setActiveSection}
       />
+      <Footer />
     </div>
   );
 };

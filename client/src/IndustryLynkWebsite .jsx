@@ -13,6 +13,7 @@ import {
   Mic,
   MessageSquare,
   Zap,
+  Building,
 } from "lucide-react";
 
 const IndustryLynkWebsite = ({ scrollToSection, setActiveSection }) => {
@@ -130,6 +131,12 @@ const IndustryLynkWebsite = ({ scrollToSection, setActiveSection }) => {
       description:
         "Discover opportunities for research partnerships and innovation",
     },
+    {
+      icon: <Building className="w-8 h-8" />,
+      title: "CSR, hiring, and innovation partnerships",
+      description:
+        "Connect for CSR, recruitment, and innovation-driven collaborations.",
+    },
   ];
 
   return (
@@ -223,8 +230,8 @@ const IndustryLynkWebsite = ({ scrollToSection, setActiveSection }) => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <div className="mb-8">
-              <div className="inline-flex items-center space-x-4 mb-6">
-                <div className="w-16 h-16 bg-black/70 bg-opacity-20 rounded-full flex items-center justify-center">
+              <div className="items-center space-x-4 mb-6 flex flex-col ">
+                <div className="w-80 h-80 rounded-full flex items-center justify-center">
                   <span className="text-2xl font-bold text-black">
                     <img
                       src="/caps-logo.png"
@@ -233,21 +240,21 @@ const IndustryLynkWebsite = ({ scrollToSection, setActiveSection }) => {
                     />
                   </span>
                 </div>
-                <div className="text-right">
-                  <p className="text-sm opacity-90">Organized by CAPS</p>
-                  <p className="text-xs opacity-75">IIT Ropar</p>
+                <div className="text-center">
+                  <p className="text-lg opacity-90">Organized by CAPS</p>
+                  <p className="text-sm opacity-75">IIT Ropar</p>
                 </div>
               </div>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               INDUSTRY LYNK
-              <span className="block text-3xl md:text-5xl text-teal-600">
+              <span className="block text-3xl md:text-5xl text-white">
                 2025
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl mb-4 text-cyan-200 italic">
+            <p className="text-xl md:text-2xl mb-4 text-blue-700 italic">
               "Portal to Next-Gen Industry Excellence"
             </p>
 
@@ -258,14 +265,16 @@ const IndustryLynkWebsite = ({ scrollToSection, setActiveSection }) => {
             {/* Event Details */}
             <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-2xl mx-auto text-black">
               <div className="bg-white bg-opacity-10 rounded-lg p-6 backdrop-blur-sm">
-                <Calendar className="w-8 h-8 mx-auto mb-3 text-cyan-300" />
+                <Calendar className="w-8 h-8 mx-auto mb-3 text-blue-800" />
                 <h3 className="text-lg font-semibold mb-2">Date</h3>
                 <p className="text-lg">30th September 2025</p>
               </div>
               <div className="bg-white bg-opacity-10 rounded-lg p-6 backdrop-blur-sm">
-                <MapPin className="w-8 h-8 mx-auto mb-3 text-cyan-300" />
+                <MapPin className="w-8 h-8 mx-auto mb-3 text-blue-800" />
                 <h3 className="text-lg font-semibold mb-2">Venue</h3>
-                <p className="text-lg">IIT Ropar Campus</p>
+                <p className="text-lg">
+                  IIT Ropar Campus, Punjab, India, 140001
+                </p>
               </div>
             </div>
 
@@ -415,9 +424,12 @@ const IndustryLynkWebsite = ({ scrollToSection, setActiveSection }) => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="flex flex-wrap justify-center gap-8 mb-16">
             {whyAttendReasons.map((reason, index) => (
-              <div key={index} className="text-center group">
+              <div
+                key={index}
+                className="text-center group bg-white shadow-md rounded-2xl p-6 w-72 hover:shadow-xl transition-all duration-300"
+              >
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <span className="text-white">{reason.icon}</span>
                 </div>
@@ -547,93 +559,75 @@ const IndustryLynkWebsite = ({ scrollToSection, setActiveSection }) => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-blue-50 rounded-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Contact Information
-                </h3>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-gray-900">
-                      Corporate Manager
-                    </h4>
-                    <p className="text-gray-700">Sonali Singh</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Email</h4>
+            {/* Contact Information */}
+            <div className="bg-blue-50 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+                Contact Information
+              </h3>
+
+              {/* Contacts Grid */}
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                {/* Sonali Singh */}
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-gray-900">
+                    Corporate Manager
+                  </h4>
+                  <p className="text-gray-700">Sonali Singh</p>
+                  <p>
                     <a
                       href="mailto:cm.caps@iitrpr.ac.in"
                       className="text-blue-600 hover:text-blue-800"
                     >
                       cm.caps@iitrpr.ac.in
                     </a>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Phone</h4>
+                  </p>
+                  <p>
                     <a
                       href="tel:+917087478985"
                       className="text-blue-600 hover:text-blue-800"
                     >
                       +91 70874 78985
                     </a>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">
-                      Organization
-                    </h4>
-                    <p className="text-gray-700">
-                      CAPS (Corporate, Alumni, Placement & Strategies)
-                    </p>
-                    <p className="text-gray-600">IIT Ropar</p>
-                  </div>
+                  </p>
+                </div>
+
+                {/* Ms. Sheetal Bhola */}
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-gray-900">
+                    Lead – Placement Liaison (CAPS, JA)
+                  </h4>
+                  <p className="text-gray-700">Sheetal Bhola</p>
+                  <p>
+                    <a
+                      href="mailto:support.cdpc@iitrpr.ac.in"
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      support.cdpc@iitrpr.ac.in
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href="tel:+918528941148"
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      +91 85289 41148
+                    </a>
+                  </p>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-6">Get Involved</h3>
-                <p className="text-blue-100 mb-6">
-                  Don't miss this opportunity to be part of India's premier
-                  industry-academia interface event.
+              {/* Organization Info */}
+              <div className="border-t border-gray-300 pt-6 text-center">
+                <h4 className="font-semibold text-gray-900">Organization</h4>
+                <p className="text-gray-700">
+                  CAPS (Corporate, Alumni, Placement & Strategies)
                 </p>
-                <div className="space-y-4">
-                  <button className="w-full bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300">
-                    Register as Participant
-                  </button>
-                  <button className="w-full bg-cyan-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-cyan-600 transition-colors duration-300">
-                    Become a Speaker
-                  </button>
-                  <button className="w-full border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300">
-                    Partnership Opportunities
-                  </button>
-                </div>
+                <p className="text-gray-600">IIT Ropar</p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="flex items-center justify-center space-x-4 mb-6">
-              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">IIT</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">Industry LYNK 2025</h3>
-                <p className="text-gray-400">IIT Ropar</p>
-              </div>
-            </div>
-            <p className="text-gray-400 mb-4">
-              Organized by CAPS (Corporate, Alumni, Placement & Strategies)
-            </p>
-            <p className="text-gray-500">
-              © 2025 IIT Ropar. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
