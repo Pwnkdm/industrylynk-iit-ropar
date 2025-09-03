@@ -15,6 +15,7 @@ import {
   Zap,
   Building,
 } from "lucide-react";
+import KeynoteSpeaker from "./components/KeynoteSpeakers";
 
 const IndustryLynkWebsite = ({ scrollToSection, setActiveSection }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -144,75 +145,12 @@ const IndustryLynkWebsite = ({ scrollToSection, setActiveSection }) => {
       {/* Navigation */}
 
       {/* Hero Section */}
-      {/* <section
-        id="home"
-        className="pt-20 min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-700 text-white relative overflow-hidden"
-      >
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center">
-            <div className="mb-8">
-              <div className="inline-flex items-center space-x-4 mb-6">
-                <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                  <span className="text-2xl font-bold">IIT</span>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm opacity-90">Organized by CAPS</p>
-                  <p className="text-xs opacity-75">IIT Ropar</p>
-                </div>
-              </div>
-            </div>
-
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              INDUSTRY LYNK
-              <span className="block text-3xl md:text-5xl text-cyan-300">
-                2025
-              </span>
-            </h1>
-
-            <p className="text-xl md:text-2xl mb-4 text-cyan-200 italic">
-              "Portal to Next-Gen Industry Excellence"
-            </p>
-
-            <p className="text-lg md:text-xl mb-12 max-w-4xl mx-auto">
-              Aligning Horizons: Talent, Ideas & Industry for a Smarter Future
-            </p>
-
-       
-            <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-2xl mx-auto">
-              <div className="bg-white bg-opacity-10 rounded-lg p-6 backdrop-blur-sm">
-                <Calendar className="w-8 h-8 mx-auto mb-3 text-cyan-300" />
-                <h3 className="text-lg font-semibold mb-2">Date</h3>
-                <p className="text-lg">30th September 2025</p>
-              </div>
-              <div className="bg-white bg-opacity-10 rounded-lg p-6 backdrop-blur-sm">
-                <MapPin className="w-8 h-8 mx-auto mb-3 text-cyan-300" />
-                <h3 className="text-lg font-semibold mb-2">Venue</h3>
-                <p className="text-lg">IIT Ropar Campus</p>
-              </div>
-            </div>
-
-            <button
-              onClick={() => scrollToSection("about")}
-              className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              Learn More
-            </button>
-          </div>
-        </div>
-
-        
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-8 h-8 text-white opacity-75" />
-        </div>
-      </section> */}
-
       <section
         id="home"
-        className="pt-20 min-h-screen relative overflow-hidden text-white"
+        className="pt-20 min-h-screen relative overflow-hidden text-white bg-gradient-to-tr from-green-700 to-indigo-600"
       >
         {/* Background video */}
-        <video
+        {/* <video
           autoPlay
           loop
           muted
@@ -221,7 +159,7 @@ const IndustryLynkWebsite = ({ scrollToSection, setActiveSection }) => {
         >
           <source src="/background_video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black opacity-10"></div>
@@ -254,7 +192,7 @@ const IndustryLynkWebsite = ({ scrollToSection, setActiveSection }) => {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl mb-4 text-blue-700 italic">
+            <p className="text-xl md:text-2xl mb-4 text-white-700 italic">
               "Portal to Next-Gen Industry Excellence"
             </p>
 
@@ -408,6 +346,9 @@ const IndustryLynkWebsite = ({ scrollToSection, setActiveSection }) => {
           </div>
         </div>
       </section>
+
+      {/* Keynote Speaker  */}
+      <KeynoteSpeaker />
 
       {/* Why Attend */}
       <section id="speakers" className="py-20 bg-white">
