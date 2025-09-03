@@ -4,7 +4,6 @@ import { Menu, X } from "lucide-react";
 const navItems = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
-  { id: "highlights", label: "Event Highlights" },
   { id: "speakers", label: "Speakers" },
   { id: "networking", label: "Networking" },
   { id: "contact", label: "Contact" },
@@ -37,8 +36,8 @@ const Navbar = ({
             </div>
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex space-x-6 xl:space-x-8">
+          {/* Desktop Menu - Reduced spacing from space-x-6 xl:space-x-8 to space-x-3 xl:space-x-4 */}
+          <div className="hidden lg:flex space-x-3 xl:space-x-4">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -72,13 +71,13 @@ const Navbar = ({
             </button>
           </div>
 
-          {/* Tablet Menu (Medium screens) */}
-          <div className="hidden md:flex lg:hidden space-x-4 ">
+          {/* Tablet Menu - Minimal spacing */}
+          <div className="hidden md:flex lg:hidden space-x-1">
             {navItems.slice(0, 4).map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`px-2 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer text-white ${
+                className={`px-1 py-2 text-xs font-medium transition-colors duration-200 cursor-pointer text-white ${
                   activeSection === item.id
                     ? "text-orange-600 border-b-2 border-orange-600"
                     : "text-gray-300 hover:text-orange-600"
@@ -89,7 +88,7 @@ const Navbar = ({
             ))}
             {/* More menu for remaining items */}
             <div className="relative group">
-              <button className="px-2 py-2 text-sm font-medium text-gray-300 hover:text-orange-600">
+              <button className="px-1 py-2 text-xs font-medium text-gray-300 hover:text-orange-600">
                 More
               </button>
               <div className="absolute right-0 mt-2 w-48 bg-black/90 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-4">
