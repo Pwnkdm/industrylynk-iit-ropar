@@ -1,5 +1,5 @@
 import React from "react";
-import varadhanan from "../assets/keynoteSpeakers/varadharaju_Janardhanan.png";
+import varadhanan from "../assets/keynoteSpeakers/varadharaju_janardhanan.png";
 
 const SpeakerSkeleton = ({
   speakerImage,
