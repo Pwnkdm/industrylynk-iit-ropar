@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import IndustryLynkWebsite from "./IndustryLynkWebsite ";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { Routes, Route } from "react-router-dom";
+import RegistrationNotice from "./components/RegistrationNotice";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,10 +34,19 @@ const App = () => {
         activeSection={activeSection}
         setIsMenuOpen={setIsMenuOpen}
       />
-      <IndustryLynkWebsite
-        scrollToSection={scrollToSection}
-        setActiveSection={setActiveSection}
-      />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <IndustryLynkWebsite
+              scrollToSection={scrollToSection}
+              setActiveSection={setActiveSection}
+            />
+          }
+        />
+        <Route path="/register" element={<RegistrationNotice />} />
+      </Routes>
+
       <Footer />
     </div>
   );

@@ -1,6 +1,8 @@
 import React from "react";
 import { Calendar, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import auditorium from "../assets/audi.jpeg";
+import { WaveSeparator } from "./WaveSeperator";
 
 const HeroSection = () => {
   return (
@@ -8,11 +10,11 @@ const HeroSection = () => {
       id="home"
       className="pt-20 min-h-fit relative overflow-hidden text-white bg-gradient-to-tr from-black to-black"
       style={{
-        backgroundImage: `url('https://cdn.pixabay.com/photo/2015/05/24/17/16/meeting-782050_1280.jpg')`,
+        backgroundImage: `url(${auditorium})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
+        // backgroundAttachment: "fixed",
       }}
     >
       {/* Overlay */}
@@ -75,6 +77,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+      <div className="border-4"></div>
     </section>
   );
 };

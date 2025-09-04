@@ -1,5 +1,6 @@
 import React from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const navItems = [
   { id: "home", label: "Home" },
@@ -20,21 +21,23 @@ const Navbar = ({
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">
-                <img className="w-full h-full" src="/logo.png" alt="logo" />
-              </span>
+          <Link to="/">
+            <div className="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-lg">
+                  <img className="w-full h-full" src="/logo.png" alt="logo" />
+                </span>
+              </div>
+              <div className="min-w-0">
+                <h1 className="text-base sm:text-lg lg:text-xl font-bold text-white truncate">
+                  Industry LYNK 2025
+                </h1>
+                <p className="text-xs sm:text-sm text-gray-300 hidden xs:block">
+                  IIT Ropar
+                </p>
+              </div>
             </div>
-            <div className="min-w-0">
-              <h1 className="text-base sm:text-lg lg:text-xl font-bold text-white truncate">
-                Industry LYNK 2025
-              </h1>
-              <p className="text-xs sm:text-sm text-gray-300 hidden xs:block">
-                IIT Ropar
-              </p>
-            </div>
-          </div>
+          </Link>
 
           {/* Desktop Menu - Reduced spacing from space-x-6 xl:space-x-8 to space-x-3 xl:space-x-4 */}
           <div className="hidden lg:flex space-x-3 xl:space-x-4">
@@ -51,24 +54,26 @@ const Navbar = ({
                 {item.label}
               </button>
             ))}
-            <button
-              class="inline-flex items-center gap-2 rounded-full px-6 py-2.5
-         border border-indigo-400/60 text-indigo-400
-         hover:bg-indigo-500 hover:text-white
-         transition font-medium focus:outline-none
-         focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 cursor-pointer"
-            >
-              Register
-              <svg
-                class="h-4 w-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
+            <Link to="/register">
+              <button
+                class="inline-flex items-center gap-2 rounded-full px-6 py-2.5
+              border border-indigo-400/60 text-indigo-400
+              hover:bg-indigo-500 hover:text-white
+              transition font-medium focus:outline-none
+              focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 cursor-pointer"
               >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </button>
+                Register
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </Link>
           </div>
 
           {/* Tablet Menu - Minimal spacing */}
@@ -105,25 +110,26 @@ const Navbar = ({
                     {item.label}
                   </button>
                 ))}
-
-                <button
-                  class="inline-flex items-center gap-2 rounded-full px-6 py-2.5
+                <Link to="/register">
+                  <button
+                    class="inline-flex items-center gap-2 rounded-full px-6 py-2.5
          border border-indigo-400/60 text-indigo-400
          hover:bg-indigo-500 hover:text-white
          transition font-medium focus:outline-none
          focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 cursor-pointer"
-                >
-                  Register
-                  <svg
-                    class="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
                   >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </button>
+                    Register
+                    <svg
+                      class="h-4 w-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -161,25 +167,26 @@ const Navbar = ({
                 {item.label}
               </button>
             ))}
-
-            <button
-              class="inline-flex items-center gap-2 rounded-full px-6 py-2.5
+            <Link to="/register">
+              <button
+                class="inline-flex items-center gap-2 rounded-full px-6 py-2.5
          border border-indigo-400/60 text-indigo-400
          hover:bg-indigo-500 hover:text-white
          transition font-medium focus:outline-none
          focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 cursor-pointer"
-            >
-              Register
-              <svg
-                class="h-4 w-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
               >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </button>
+                Register
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </Link>
           </div>
         </div>
       )}
